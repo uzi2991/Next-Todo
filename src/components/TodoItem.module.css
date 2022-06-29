@@ -1,0 +1,11 @@
+.todo {
+  @apply bg-yellow-100 text-yellow-500;
+}
+
+.doing {
+  @apply bg-blue-100 text-blue-500;
+}
+
+.done {
+  @apply bg-green-100 text-green-500;
+}

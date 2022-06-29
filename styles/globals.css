@@ -1,16 +1,70 @@
-html,
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  @apply min-h-screen bg-primary-50;
+  font-family: 'Roboto', sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+textarea {
+  height: 6rem;
+  overflow-y: scroll;
 }
 
-* {
-  box-sizing: border-box;
+textarea::-webkit-scrollbar {
+  width: .4rem;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  @apply bg-primary-500 rounded-full
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-700
+}
+
+
+@layer utilities {
+  .full-page {
+    @apply min-h-screen center w-screen;
+  }
+
+  .center {
+    @apply flex items-center justify-center;
+  }
+
+  .container-fluid {
+    @apply px-4 lg:px-0 mx-auto w-full max-w-screen-lg;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-2 py-1 shadow-md rounded-md;
+  }
+
+  .btn:disabled {
+    @apply cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply text-white bg-primary-500 border-primary-500 border;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:disabled {
+    @apply bg-primary-700 border-primary-700;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary-500 border-primary-500 border;
+  }
+
+  .btn-secondary:hover,
+  .btn-secondary:disabled {
+    @apply text-primary-700 border-primary-700;
+  }
 }
